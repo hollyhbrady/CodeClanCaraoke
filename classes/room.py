@@ -5,7 +5,5 @@ class Room:
         self.capacity = capacity
         self.attendees = []
 
-    # function to check in guests to room
-    # take a guest by name
-    # put in room by number
-    # assign to room list
+    def check_in(self, guest):
+        self.attendees.append(guest)
