@@ -10,3 +10,6 @@ class TestGuest(unittest.TestCase):
 
     def test_guest_has_name(self):
         self.assertEqual("Colin", self.guest.name)
+
+    def test_guest_has_fav_song(self):
+        self.assertEqual("Rocket Man", self.guest.fav_song)    
