@@ -1,5 +1,5 @@
-class Room
+class Room:
 
-    def __init__(self, name, capacity):
-        self.name = name
+    def __init__(self, number, capacity):
+        self.number = number
         self.capacity = capacity
