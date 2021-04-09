@@ -11,5 +11,8 @@ class TestRoom(unittest.TestCase):
     def test_room_has_number(self):
         self.assertEqual(1, self.room.number)
 
+    def test_room_has_capacity(self):
+        self.assertEqual(10, self.room.capacity)
+
 
 
