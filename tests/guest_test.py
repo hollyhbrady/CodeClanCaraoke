@@ -16,4 +16,5 @@ class TestGuest(unittest.TestCase):
         self.assertEqual("Rocket Man", self.guest.fav_song)    
 
     def test_guest_can_add_song_to_room(self):
+        self.room_one.add_song(self.room_one)
         self.assertEqual("Rocket Man", self.room_one.song_list)

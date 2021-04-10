@@ -4,6 +4,6 @@ class Guest:
         self.name = name
         self.fav_song = fav_song
 
-    #def add_song_to_room(self, room)
-    # take guess favoutite song
-    # add to specific room song list
+    def add_song(self, room, guest):
+        room.song_list.append(self.guest.fav_song)
+    
