@@ -8,6 +8,7 @@ class TestGuest(unittest.TestCase):
     def setUp(self):
         self.guest = Guest("Colin", "Rocket Man")
         self.room_one = Room("One", 10)
+        self.bemorekind = Song("Be More Kind", "Frank Turner")
 
     def test_guest_has_name(self):
         self.assertEqual("Colin", self.guest.name)
@@ -23,6 +24,7 @@ class TestGuest(unittest.TestCase):
     # def test_check_in(self):
     #     self.room_one.check_in(self.guest)
     #     self.assertEqual("Colin", self.room_one.attendees[0].name)
-    # def test_add_song_to_room(self):
-    #     self.room_one.add_song(self.bemorekind)
-    #     self.assertEqual(1, len(self.room_one.song_list))
+    
+    def test_add_song_to_room(self):
+        self.room_one.add_song(self.bemorekind)
+        self.assertEqual(1, len(self.room_one.song_list))

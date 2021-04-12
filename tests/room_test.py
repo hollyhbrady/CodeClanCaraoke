@@ -20,13 +20,14 @@ class TestRoom(unittest.TestCase):
     def test_room_has_capacity(self):
         self.assertEqual(10, self.room_one.capacity)
 
-    # def test_check_in(self):  # this test broke when I adjusted check in function to test capacity
-    #     self.room_one.check_in(self.colin)
-    #     self.assertEqual("Colin", self.room_one.attendees[0].name)
+    def test_check_in(self):  # this test broke when I adjusted check in function to test capacity
+        self.room_one.check_in(self.colin)
+        self.assertEqual("Colin", self.room_one.attendees[0].name)
 
     def test_check_out(self):
+        self.room_one.check_in(self.colin)
         self.room_one.check_out(self.colin)
-        self.assertEqual([], self.room_one.attendees)
+        self.assertEqual(0, len(self.room_one.attendees))
 
     def test_add_song_to_room(self):
         self.room_one.add_song(self.bemorekind)
@@ -36,6 +37,6 @@ class TestRoom(unittest.TestCase):
         self.room_two.check_in(self.hannah)
         self.room_two.check_in(self.roosa)
         self.room_two.check_in(self.colin)
-        self.room_two.check_in(self)
-        self.assertEqual(2, len(self.room_two.attendees))
+        result = self.room_two.check_capacity()
+        self.assertEqual(2, result)
 

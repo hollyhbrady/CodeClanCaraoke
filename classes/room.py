@@ -11,23 +11,23 @@ class Room:
         if len(self.attendees) < self.capacity:
             self.attendees.append(guest)
 
-    # def check_out(self, person, attendees):
+    # def check_out(self, guest, attendees):
     #     for person in self.attendees:
-    #         if person == guest.name:
+    #         if person.name == guest.name:
     #             self.attendees.remove(person)
         # Tried to make an if loop to find guest then remove them, cant make it work
                 
     def check_out(self, guest):
-        self.attendees.append(guest) # cant run without this or ValueError: list.remove(x)
+        # self.attendees.append(guest) # cant run without this or ValueError: list.remove(x)
         self.attendees.remove(guest)
 
     def add_song(self, song):
         self.song_list.append(song) # which room? cant make it work when I try to add this
     
-    # def check_capacity(self, capacity):
-    #     if len(self.attendees) > capacity:
-    #         self.attendees.pop() #will this keep running until line 26 isn't more than?
-    #     return len(self.capacity)
+    def check_capacity(self):
+        if len(self.attendees) > self.capacity:
+            self.attendees.pop() #will this keep running until line 26 isn't more than?
+        return self.capacity
     # TypeError: '>' not supported between instances of 'int' and 'TestRoom'        
 
     #check the len of guest list
